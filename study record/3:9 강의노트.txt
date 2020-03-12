@@ -1,0 +1,31 @@
+3/9 강의 노트
+
+npm create-react-app 설치법
+ 1. terminal에 
+	npm install -g create-react-app 입력
+	* -g : global의 약자, 어디에서든지 실행가능
+ 2. 설치버전 확인방법은
+	create-react-app -V 입력
+ 3. vs code에서 web에 연결하는 방법 
+	command + J 를 통해 터미널로 들어가서 npm run start 입력하면 자동으로 연결
+	crtl + c 입력하면 종료
+
+강의내용
+1. react는 반드시 하나의 코드 안에 다른 코드들이 존재해야 함
+2. 배포하는 법 : 기존 개발을 위한 개발환경의 앱보다 배포할 때에는 불필요한 데이터들은 정리 후
+	      용량을 줄여서 배포함
+		-> 터미널에 npm run build 입력을 하게 되면 기존 개발환경보다 용량이
+		   줄어든 파일들이 생성이 됨.
+3. html을 react로 바꿔주는 방법
+   -class 바로 뒤에 나오는 이름은 대문자로 시작해야 함
+	->js에서의 함수 function을 생략하고 render로 함수 역할을 대신할 수 있음
+4. component 생성법
+    -'하나'의 최상위 태그로 시작해야 함
+    - 각 component마다 이름을 지정해준 후 태그 작성, 이후 지정해준 이름을 불러오기
+5. component로 연결을 하게 되면 다 같은 내용들이 똑같이 재사용되게 됨
+     -> 이 때, 같은 component를 사용하면서도 내용을 바꿔주기 위해 태그를 사용 : props
+	component에 태그를 적용 후 {this.props.태그이름}을 삽입
+	이는 크롬개발자도구(component)에서 실시간으로 변경 가능하며 입력한 코드 그대로 확인 가능
+6. component를 개별파일로 분리하기
+   - 입력한 코드를 옮기고 그중에서 어떤것을 외부로 출력할지 입력
+      -> export default 파일이름;
