@@ -1,0 +1,33 @@
+3/16 강의노트
+
+1. jsx규칙 : 꼭 닫혀야 하는 태그 - <div></div> / <input />
+	    두개 이상의 엘리먼트는 무조건 하나의 엘리먼트로 감싸기 - <div></div> 두개를 독립적
+	    으로 쓸 경우, 하나의 div로 묶어주어야 함
+		->불필요한 div를 없애고 싶을 경우엔 'fragment' 사용
+
+* const, let, var 차이점 : scope의 차이
+  - var : scope가 변수를 선언한 함수 내에 적용 
+  - const, let : scope가 블록단위로 되어있음
+   - var : 더이상 사용하지 않음
+   - const : 한번 선언한 후 고정적인 값에 사용
+   - let : 유동적인 값에 사용
+* 화살표 함수 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98
+*블로그 마크다운 작성법 : https://velog.io/@yuuuye/velog-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4MarkDown-%EC%9E%91%EC%84%B1%EB%B2%95
+	    
+	    css style 작성법 : -로 표현하던 것들은 camel표기법으로 한단어를 만들어줌
+			     객체형태로 표기(html에서는 문자열로 표기)
+			     html에서의 class는 'className'으로 표기
+	    주석처리 : 멀티라인으로 표기하되 {/* */} - 중괄호로 감싸주어야 함
+
+2. props
+  - props의 기본값 설정하기(class형) : static defaultProps = {
+				props의 이름: '값'
+			  };
+  - props의 기본값 설정하기(함수형) : MyName.defaultProps = {
+				props의 이름:'값'
+				};
+
+생성자함수 : 재사용이 가능한 함수를 통해 복제한 인스턴스를 만들어 데이터를 담아서 사용
+	  객체를 만들어내는 함수, function예약어를 사용하여 선언
+	  객체의 속성, 함수의 정의 - this예약어 다음에 마침표와 속성이름 입력하여 사용
+		-> 이떄 this가 가르키는 것은 선언하고 있는 '객체 자체'
