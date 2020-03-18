@@ -1,0 +1,68 @@
+3/18 강의노트
+
+<<<<< react >>>>>
+
+1. 환경설정하기
+   - yarn : 이전 강의에서 설치했던 npm이 어떤 역할을 하는지도 모르고 그냥 따라하면서 설치했었는데 
+	    '패키지 매니저'의 한 종류인 것을 이번 강의를 통해 알게 되었다. 자바스크립트에서 개발
+	    자들이 코드패키지를 공유하고 이를 조립하여 프로젝트를 빌드하는 도구로 패키지 매니저를
+	    사용하는데, 이중에서 가장 유명한게 npm이었다. 이는 jQuery, Bootstrap, React와   
+            Angular 같은 엄청난 양의 패키지들을 호스팅하지만 단점이 존재한다. 이떄문에 페이스북,
+	    구글 등의 그룹이 협력하여 만든 안정적이고 보완성이 뛰어난 새로운 패키지 매니저가
+	    'yarn'이다.
+	- 설치방법 : 기존에 나는 npm을 설치했었기 때문에 이를 통해 설치가 가능했다.
+	  강사는 'brew install --without-node'를 통해 설치하라고 알려주었지만 내 커멘드
+	  에서는 brew가 존재하지 않는 문구만 떠서 다른 방법을 찾던 중 알게 되었다.
+	  'npm install --global yarn'을 통해 설치했다. yarn을 글로벌 하게 사용 할 수 
+          있도록 터미널에서 PATH 환경 변수 설정을 잊으면 안된다고 한다.
+   - 프로젝트 생성하기 : 터미널에 'npx create-react-app contact-app'을 통해 생성
+   - vs code에서 'Reactjs code snippet'을 설치하면 
+	rcc : react의 class형 컴포넌트가 자동으로 입력
+	rsc : react의 함수형 컴포넌트가 자동으로 입력
+
+2. react 코드작성하기
+   - App.js에 다른 컴포넌트 파일을 랜더링할 때 직접 import부터 입력하는 것보다 
+	return값에 <컴포넌트 파일이름 />을 입력하고 엔터를 누르면 자동으로 랜더링됨
+   - state를 통해 input값을 변경하는 방법
+ state = {
+   name: '',
+   phone:'',
+ }
+ handleChange = (e) => {
+   this.setState({
+     [e.target.name]: e.target.value
+   });
+ }
+    render() {
+        return (
+            <form>
+                <input 
+                name="name"
+                placeholder="이름" 
+                onChange={this.handleChange} 
+                value={this.state.name}/>
+                <input 
+                name="phone"
+                placeholder="전화번호" 
+                onChange={this.handleChange}
+                value={this.state.phone}/>
+                <div>
+                  {this.state.name} {this.state.phone}
+                </div>
+                
+            </form>
+        );
+    }
+
+3. 배열
+  - React에서는 '불변성'을 지켜주어야 함. 
+  - map(내장함수) : 배열을 특정 함수를 사용하여 전체적으로 변환할 때 사용
+	예) const numbers = [1,2,3,4,5];
+	   const squared = numbers.map(n => n * n)
+	   squared =[1,4,9,16,25]
+  - key : 배열내에서 어떠한 요소의 변경이 일어날 경우, 효율적으로 작업하기 위한 기능을 함
+  - filter함수 : 배열에서 조건에 해당하는 값을 추출
+	예) numbers = [1,2,3,4,5]
+	  numbers.filter(n => n < 3)
+	  --->[4,5]
+	 이 때 기존 배열은 변경되지 않는다.
