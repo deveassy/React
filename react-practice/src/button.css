@@ -1,0 +1,29 @@
+/* .form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+.btn {
+  padding: 5px 13px;
+  margin: 0 5px;
+  border-radius: 3px;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+.btn_input {
+  background-color: #1098ad;
+}
+.btn_edit {
+  background-color: #9775fa;
+}
+.btn_delete {
+  background-color: #fa5252;
+}
