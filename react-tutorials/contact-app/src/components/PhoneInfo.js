@@ -8,6 +8,10 @@ class PhoneInfo extends Component {
         phone: '',
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+         
+    }
+
     handleRemove =() => {
         const { info, onRemove } = this.props;
         onRemove(info.id);
@@ -32,13 +36,13 @@ class PhoneInfo extends Component {
             }
             this.setState({
             editing: !this.state.editing,
-        })
+        });
     }
 
     handleChange =(e) => {
         this.setState({
             [e.target.name] : e.target.value 
-        })
+        });
     }
     render() {
         const { name, phone } = this.props.info;
@@ -48,7 +52,8 @@ class PhoneInfo extends Component {
             border: '1px solid black',
             padding: '8px',
             margin: '8px',
-        }
+        };
+
         return (
             <div style={style}>
                 {
