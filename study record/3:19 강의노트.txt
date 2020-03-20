@@ -1,0 +1,27 @@
+3/19 강의노트
+
+<<<< react >>>>
+
+1. shouldComponentUpdate : 불필요한 rerendering을 없애줌.
+			   프로그램에 변화가 생긴 부분만을 랜더링함
+2. ref : 포커스를 주거나 특정 돔의 크기를 가져오거나 특정 돔의 스크롤위치, 크기를 가져올 때, 돔에 직접적인 접근이 필요할 때 사용
+외부라이브러리와의 연동에서도 사용 - this나 차트관련 라이브러리 사용 등 특정 돔에 그려지게 설정
+	적용법: 1) 함수사용 - ref를 파라미터로 받아서 함수 작성
+				->컴포넌트의 멤버변수로 ref값에 넣어줌
+		예) input = null;
+		    ref={ref => this.input = ref}
+		handleSubmit에 this.input.focus 작성
+	      2) React.createRef사용
+		예) input = React.createRef();
+		    ret={this.input}
+ 		handleSubmit에 this.input.current.focus 작성
+	 
+
+
+3. lifecycle(생명주기)
+  1) constructor로 component 초기생성
+  2) componentWillMount : 컴포넌트가 여러분의 화면에 나가나기 직전에 호출되는 API 
+  3) componentDidMount : 컴포넌트가 화면에 나타나게 됐을 때 호출
+  4) componentWillReceiveProps : 컴포넌트가 새로운 props 를 받게됐을 때 호출
+  5) shouldComponentUpdate
+  6) render함수 호출
