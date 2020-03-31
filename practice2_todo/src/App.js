@@ -41,9 +41,10 @@ class App extends Component {
   }
 
   handlToggle = (id) => {
-    const index = this.state.todos.findIndex(todo => todo.id === id);
-    const selected = this.state.todos[index];
-    const nextTodos = [...this.state.todos];
+    const { todos } = this.state;
+    const index = todos.findIndex(todo => todo.id === id);
+    const selected = todos[index];
+    const nextTodos = [...todos];
 
     nextTodos[index] = {
       ...selected,
