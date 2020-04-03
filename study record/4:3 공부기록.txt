@@ -1,0 +1,20 @@
+4/3 공부기록
+
+1. React 에서 img파일 받아오기
+> https://writingdeveloper.tistory.com/301 참고
+----> create-react-app 으로 리엑트 파일을 만들었을 경우, public이라는 파일이 생기는데 이 파일에 이미지를 저장한 후, <img src="/img.png"> 처럼 넣어주면 로드가 됨
+
+2. css - position
+  - moon의 TextInput의 수정작업을 도와주면서 알게 된 부분
+	--> label 상단에 텍스트를 넣어주고 싶어서 label 자체에 position:absolute;를 
+	    해주니 라벨을 감싸는 큰 틀이 전체적으로 감싸져 있는 제일 바깥 틀이라서 창의 맨 위로
+	    (top:0; 때문에)
+	    텍스트가 올라가게 됬다. 그래서 따로 div를 라벨과 관련있는 input에 감싸주고 
+	    position:relative;를 넣어주니 제대로 적용되었다.
+
+3. 수정해야 할 부분
+  - color를 props로 받아올 수 있게 만들기 v 
+  - disabled버튼은 버튼의 고유기능도 없애주기 ===> disabled 처리되었는지 확인하는 방법은?
+  - default의 경우에는 mode를 없애고 나머지 부분에 props를 적용하기 - 각 스타일마다 props를 
+	다르게 지정해보기 ===> default값을 정해주기 ( mode='full'을 변경? )
+  - onClick 해결하기 - useState사용법 익히기
