@@ -1,0 +1,41 @@
+4/7 공부기록
+
+1. check-box
+
+리액트(React)에서 체크박스(Checkbox) 사용 시 아래와 같은 에러가 발생할 때가 있다.
+
+index.js:1452 Warning: Failed prop type: You provided a checked prop to a form field without an onChange handler. This will render a read-only field. If the field should be mutable use defaultChecked. Otherwise, set either onChange or readOnly.
+
+input type으로 checkbox를 쓸 때 onClick 핸들러를 제공하고 checked 값을 설정하는 식으로 코딩하면 이런 에러 메시지가 발생한다.
+
+<<<해결방법>>>
+1. onClick 핸들러를 없애고 onChange 핸들러를 사용한다.
+2. onClick 핸들러를 그대로 두고 싶으면 readonly 키워드를 붙이거나 checked 속성 대신
+   defaultChecked를 사용한다.
+
+체크박스 , 라디오 그룹 버튼을 만들 때는 name 속성에 같은 값을 입력 한다.
+
+만약 input 엘리먼트에 기본 placeholder 를 적용하고 싶다면 어떻게 해야할까? `attrs` 를 사용하여 styled element 에 custom attributes 를 적용할 수 있다.
+
+
+
+2. svg
+> https://brunch.co.kr/@kkak10/3
+PNG 와 SVG 의 가장 큰 차이점은 이미지를 구성하는 방식이다.
+PNG 는 화소(pixel) 단위로 구성되는 형태로써, 비트맵 방식이라고 불린다.
+SVG 는 수학을 기반으로 하는 점, 직선, 곡선과 같은 형태로 구성하는 방식이다.
+
+png, jpeg, gif - 래스터 이미지(Raster Image), 비트맵
+svg - 벡터 이미지(Vector Image), 벡터
+---> 웹 개발 시 SVG 의 가장 큰 장점은 HTML, CSS, JAVASCRIPT 와 함께 동작할 수 있다는 것이다.
+별도 파일이 존재하지 않아도 위처럼 이미지를 나타낼 수 있다.
+.svg 파일 로 포맷된 이미지 파일도 XML로 작성되어, 확인해보면 위와 같은 형태로 존재하는 것을 볼 수 있다.
+그로 인해, 우리는 수정, 추가, 애니메이션  등 원하는 작업을 동적으로 할 수 있다. 
+또 하나의 장점으로 이미지가 깨지지 않는다.
+PNG 파일은 원래의 크기보다 크게 보여지게 할 경우 이미지가 깨진다는 것을 알고 있다.
+하지만 벡터 방식으로써, SVG 파일은 깨질 경우가 없다.
+그로인해, hover effect 와 같이 크기 변화가 필요한 아이콘에 사용할 수 있다.
+PNG의 경우에는 원래의 크기보다 크게 표현할 경우, 깨지기 때문에 크기를 늘려야된다.
+그로인해, 최악의 경우에는 크기를 늘리거나, 여러 개의 이미지 파일이 존재할 수 있다.
+색 표현에 있어서도, 여러 개의 이미지 파일을 대비해놓는 경우가 발생할 수 있다.
+그에 반해, SVG 는 그럴 필요가 없어보인다.
