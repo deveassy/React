@@ -1,0 +1,46 @@
+4/22 공부기록
+
+1. router
+
+url주소가 바뀔 떄 마다 페이지가 변경됨 - 서버에서 검색해서 해당하는 html파일을 만들어서 전송
+
+react : index파일에서 받아온 파일들을 조합해서 필요한 소스들을 통해 출력
+-> server side rendering : 페이지 변경 시 화면이 깜빡이면서 페이지가 이동되는게 아니라 단일 페이지에서 내용이 변경되는 것.
+
+
+
+** react-router-dom 사용
+
+const Header = () => {
+  return (
+    <HeaderContainer>
+	<Link to="/">Home</Link>
+	<Link to="/button">Button</Link>
+	<Link to="/text-input">TextInput</Link>
+    </HeaderContainer>
+
+
+const page = ({title}) => {
+  return <div>{title}</div>
+
+
+const Nopage = () => {
+  return <div>페이지가 없습니다.</div>
+
+<Container>
+  <BrowserRouter>
+   <Header />
+   <Switch>
+    <Route path="/" render={() => <Page title="Home" />} />
+    <Route path="/button" render={() => <Page title="Button" />} />
+    <Route path="/text-input" render={() => <Page title="TextInput" />} />
+    <Route component={Nopage} />
+   </Swtich>
+   </Header>
+  </BrowserRouter>
+</Container>
+
+
+
+메인페이지를 BrowserRouter로 감싸주고 그 안에 각각 컴포넌트 리스트들의 아이템들은 link to로 페이지 지정해주기
+사이드바와 해더, 컨텐트 부분별로 router설정하면 전체 페이지가 변경되지 않고 부분적으로 페이지가 변경됨
